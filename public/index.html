@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Projet IoT Coulibaly</title>
+		<style>
+			*{
+				box-sizing: border-box;
+			}
+			body {
+				font-family:  Helvetica, Arial, sans-serif;
+				font-size: 16px;
+			}
+			.header{
+				background: #532545;
+				color: white;
+				text-align: center;				
+			}
+			.content {
+				max-width: 75%;
+				margin: auto;
+			}
+			h1 {
+				padding:8px 0;
+			}
+			p{
+				font-size:20px;
+			}
+			.date{
+				text-align:center;
+			}
+			#temperature, #vibration{
+				background:red;
+			}
+			.left-title{
+				width: 145px;
+				float: left;
+				text-align: right;
+			}
+			.div-btn{
+				margin: auto;
+				width: 250px;
+			}
+			button {
+				width:250px;
+				height:40px;
+				border-radius:10px;
+				font-size: 18px;
+				border : none;
+			}
+			button:hover{
+				background:#532545;
+				cursor: pointer;
+				color: white;
+			}
+			.value{
+				padding:5px 7px;
+				margin-left: 10px;
+				border-radius: 5px;
+			}
+			.load-btn {
+				background: #D3D3D3;
+			}
+			.erase-btn{
+				margin-top : 30px;
+				background : #BA55D3;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="header">
+				<h1>Info moteur</h1>				
+			</div>
+			<div class="content">
+				<div class="date">
+					<p id="date">Date and Time</pp>
+				</div>
+				<div class"temperature">
+					<p><span class="left-title">Temperature : </span>
+					<span class="value" id="temp"></span></p>
+				</div>
+				<div>
+					<p><span class="left-title">Vibration : </span>
+					<span class="value" id="vib"></span></p>
+				</div>
+				<div>
+					<p>
+						<span class="left-title">Smoke : </span>
+						<span class="value" id="smok"></span>
+					</p>
+				</div>
+				<div>
+					<p>
+						<span class="left-title">Water flow rate : </span>
+						<span class="value" id="flowRate"></span>
+					</p>
+				</div>
+				<div class="div-btn">
+					<a href="/data.txt" download>
+						<button class="load-btn">Load data</button>
+					</a>
+				</div>
+				<div class="div-btn">
+					<button class="erase-btn" onclick="eraseDateReq()" >Erase data</button>
+				</div>
+			</div>
+			<div class="footer"></div>
+		</div>
+				
+		<script src="/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+Create network in docker Daemon :
+sudo docker network backend
+
+Mosquitto => MQTT
+sudo docker run -d -p 1883:1883 -p 9001:9001 -v /home/pi/Documents/CoulibalyProject/dockerSpace/mosquitto.conf:/mosquitto/config/mosquitto.conf --name mosquitto --net=backend --restart=always eclipse-mosquitto
+
+Build docker image : 
+sudo docker build -t node/coulibaly .
+
+Rundocker container : 
+sudo docker run -d -p 80:80 --net=backend --name motor/coulibaly --restart=always node/coulibaly
+

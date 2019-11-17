@@ -5,7 +5,7 @@ const states = require('./states');
 
 client.on('connect', () =>{
 	client.subscribe('info/moteur');
-	console.log('Client mqtt connected !');
+	console.log('Client mqtt connected Voici!');
 });
 
 client.on('message', (topic, message) =>{
@@ -32,6 +32,7 @@ client.on('message', (topic, message) =>{
 			/*Write msg to database .......*/
 			// msg;
 			// to batabase
+			
 		}
 		catch(err){
 			console.log(err.message);
@@ -40,7 +41,7 @@ client.on('message', (topic, message) =>{
 });
 
 client.on('disconnect', () =>{
-	client.subscribe('info/moteur');
+	//client.subscribe('info/moteur');
 	console.log('Client mqtt disconnect !');
 });
 

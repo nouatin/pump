@@ -5,10 +5,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static('public'));
 const mqtt = require('mqtt');
-const client = mqtt.connect('http://localhost:1883');
+const client = mqtt.connect('http://mosquitto:1883');
+//const client = mqtt.connect('http://localhost:1883');
 const fs = require('fs');
 const states = require('./modules/states');
-const port = process.env.PORT | 8080;
+const port = process.env.PORT | 80;
 var r_msg;
 
 app.get('/', function(req, res){
@@ -62,7 +63,7 @@ client.on('message', (topic, message) =>{
 });
 
 client.on('disconnect', () =>{
-	client.subscribe('info/moteur');
+	//client.subscribe('info/moteur');
 	console.log('Client mqtt disconnect !');
 });
 

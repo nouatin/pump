@@ -1,8 +1,8 @@
 const rules = {
 	states: ['normal', 'warning', 'critical'],
 	temperature : {
-		min: 25,
-		max: 50
+		min: 21,
+		max: 51
 	},
 	smoke: {
 		min: 700,
@@ -15,9 +15,9 @@ const rules = {
 };
  
 const stateTemperature = (val) => {
-	if(val < rules.temperature.min) return rules.states[0];
+	if(val < rules.temperature.min) return rules.states[1];
 	else if(val > rules.temperature.max) return rules.states[2];
-	else return rules.states[1];
+	else return rules.states[0];
 }
 
 const stateVibration = (val) => {

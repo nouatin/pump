@@ -41,9 +41,11 @@ client.on('message', (topic, message) =>{
 	    //console.log('%s', message);
 	    try{			
 			let msg = JSON.parse(message.toString());	
-			let date = new Date();
-			date = date.toString();
-			msg.date = date.slice(0, 33);
+			let d = "";
+			d = new Date();
+			let date = d.toDateString() + ", " + d.toLocalTimeString();
+			//date = date.toString();
+			msg.date = date;	//.slice(0, 33);
 			if((!isNaN(msg.temp)) || (!isNaN(msg.vib)) || (!isNaN(msg.smok) || (!isNaN(msg.flowRate)))){					
 				fs.appendFile('public/data.txt', JSON.stringify(msg) + '\n', (err)=>{
 					if(err) console.log(err.message);	

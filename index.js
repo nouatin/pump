@@ -43,7 +43,7 @@ client.on('message', (topic, message) =>{
 			let msg = JSON.parse(message.toString());	
 			let d = "";
 			d = new Date();
-			let date = d.toDateString() + ", " + d.toLocalTimeString();
+			let date = d.toDateString() + ", " + d.toLocaleTimeString();
 			//date = date.toString();
 			msg.date = date;	//.slice(0, 33);
 			if((!isNaN(msg.temp)) || (!isNaN(msg.vib)) || (!isNaN(msg.smok) || (!isNaN(msg.flowRate)))){					
